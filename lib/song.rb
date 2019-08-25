@@ -3,7 +3,7 @@ class Song
 
    @@all = []	  @@all = []
 
-     
+
   def self.all	  def self.all
     @@all	    @@all
   end	  end
@@ -21,7 +21,7 @@ class Song
 
 
    def self.new_by_name(string)
-    song = self.new 
+    song = self.new
     song.name = "#{string}"
     song
    end
@@ -44,7 +44,7 @@ class Song
     def self.find_or_create_by_name(string)
      if self.find_by_name(string) == nil
        self.create_by_name(string)
-       else 
+       else
          self.find_by_name(string)
      end
    end
@@ -56,7 +56,7 @@ class Song
    def self.new_from_filename(string)
     new_array = string.split("- ")
     song_name = "#{new_array[1]}".gsub(".mp3",'')
-    song = self.new 
+    song = self.new
     song.name = "#{song_name}"
     song.artist_name = "#{new_array[0]}".gsub(" ",'')
     song
@@ -65,7 +65,7 @@ class Song
    def self.create_from_filename(string)
     new_array = string.split("- ")
     song_name = "#{new_array[1]}".gsub(".mp3",'')
-    song = self.new 
+    song = self.new
     song.name = "#{song_name}"
     song.artist_name = "#{new_array[0]}".gsub(" ",'')
     @@all << song
